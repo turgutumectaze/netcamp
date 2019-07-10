@@ -13,6 +13,7 @@ namespace NetCamp.Models.Services
             if (GlobalData.Ogrenciler==null)
             {
                 GlobalData.Ogrenciler = new List<Ogrenci>();
+                GlobalData.Ogrenciler.Add(new Ogrenci { Adi = "Admin", Id = 1, KullaniciAdi = "Admin", Password = "123", Soyadi = "Admin", Yasi = 1 });
             }
         }
         public List<Ogrenci> GetList()
@@ -38,6 +39,14 @@ namespace NetCamp.Models.Services
             var index = GlobalData.Ogrenciler.IndexOf(data);
             GlobalData.Ogrenciler[index] = model;
             return model;
+        }
+
+        public bool Delete(long id)
+        {
+            var data = GlobalData.Ogrenciler.FirstOrDefault(q => q.Id == id);
+            var index = GlobalData.Ogrenciler.IndexOf(data);
+            GlobalData.Ogrenciler.RemoveAt(index);
+            return true;
         }
     }
 }

@@ -33,6 +33,9 @@ namespace NetCamp
 
             services.AddSingleton(new OgrenciServisi());
 
+           
+
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -49,8 +52,8 @@ namespace NetCamp
             }
             //Projenin configurasyonu burda yapılır
             app.UseStaticFiles();
-            app.UseCookiePolicy();
 
+            app.UseCookiePolic
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

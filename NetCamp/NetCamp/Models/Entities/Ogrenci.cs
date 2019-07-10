@@ -13,6 +13,7 @@ namespace NetCamp.Models.Entities
         [MaxLength(10,ErrorMessage = "Kullanıcı Adı maksimum 10 karakter olabilir")]
         [MinLength(3,ErrorMessage ="Kullanıcı Adı minimum 3 karakter olabilir")]
         public string KullaniciAdi { get; set; }
+        public string Password { get; set; }
         [Required]
         public string Adi { get; set; }
         [Required]

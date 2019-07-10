@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NetCamp.Models.Entities;
 using NetCamp.Models.Services;
@@ -74,6 +75,12 @@ namespace NetCamp.Controllers
             }
 
         }
-       // https://github.com/turgutumectaze/netcamp
+
+        public IActionResult Delete(long id)
+        {
+            var sonuc = servis.Delete(id);
+            return RedirectToAction("List");
+        }
+        // https://github.com/turgutumectaze/netcamp
     }
 }

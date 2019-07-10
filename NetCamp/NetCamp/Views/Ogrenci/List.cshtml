@@ -20,6 +20,8 @@
             <td>@item.Yasi</td>
             <td>
                 <a class="btn btn-info" asp-controller="Ogrenci" asp-action="Update" asp-route-ogrenciId="@item.Id">Güncelle</a>
+
+                <a class="btn btn-danger" asp-controller="Ogrenci" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
             </td>
         </tr>
     }
