@@ -46,12 +46,13 @@ namespace NetCamp.Controllers
            
         }
 
-        [Route("/ogrenci-guncelle/{ogrenciId}")]
+        //action üzerinde route tanımı yaparken aynı isme sahip diğer actionlarda etkinlenir
+        //[Route("/ogrenci-guncelle/{ogrenciId}")]
         public IActionResult Update(long ogrenciId)
         {
             return View(servis.Get(ogrenciId));
         }
-
+         
         [HttpPost]
         public IActionResult Update(Ogrenci model)
         {
@@ -73,6 +74,6 @@ namespace NetCamp.Controllers
             }
 
         }
-
+       // https://github.com/turgutumectaze/netcamp
     }
 }
